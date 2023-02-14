@@ -1,0 +1,60 @@
+Problem:    
+Rows:       8
+Columns:    12
+Non-zeros:  24
+Status:     OPTIMAL
+Objective:  Cout = 9.5 (MINimum)
+
+   No.   Row name   St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 stockdisponible(F1,M1)
+                    NU           2.5                         2.5            -1 
+     2 stockdisponible(F1,M2)
+                    B            0.5                           1 
+     3 stockdisponible(F1,M3)
+                    B              0                           2 
+     4 stockdisponible(F2,M1)
+                    NU             1                           1            -2 
+     5 stockdisponible(F2,M2)
+                    B              1                           2 
+     6 stockdisponible(F2,M3)
+                    NU             1                           1            -1 
+     7 QuantiteVerifiee(F1)
+                    NS            -3            -3             =            -2 
+     8 QuantiteVerifiee(F2)
+                    NS            -3            -3             =            -3 
+
+   No. Column name  St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 Q(F1,M1,D1)  B            2.5             0               
+     2 Q(F1,M1,D2)  NL             0             0                       < eps
+     3 Q(F1,M2,D1)  B            0.5             0               
+     4 Q(F1,M2,D2)  NL             0             0                       < eps
+     5 Q(F1,M3,D1)  NL             0             0                           1 
+     6 Q(F1,M3,D2)  NL             0             0                           1 
+     7 Q(F2,M1,D1)  B              1             0               
+     8 Q(F2,M1,D2)  NL             0             0                       < eps
+     9 Q(F2,M2,D1)  B              1             0               
+    10 Q(F2,M2,D2)  NL             0             0                       < eps
+    11 Q(F2,M3,D1)  NL             0             0                       < eps
+    12 Q(F2,M3,D2)  B              1             0               
+
+Karush-Kuhn-Tucker optimality conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.DE: max.abs.err = 0.00e+00 on column 0
+        max.rel.err = 0.00e+00 on column 0
+        High quality
+
+KKT.DB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

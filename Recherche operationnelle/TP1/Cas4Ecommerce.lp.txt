@@ -1,0 +1,185 @@
+\* Problem: ModelEcommerceCas4 *\
+
+Minimize
+ distance: + D(c1,Alpha) + D(c2,Alpha) + 10 D(c3,Alpha) + 12 D(c4,Alpha)
+ + 12 D(c5,Alpha) + D(Alpha,c1) + D(c2,c1) + 8 D(c3,c1) + 10 D(c4,c1)
+ + 11 D(c5,c1) + D(Alpha,c2) + D(c1,c2) + 8 D(c3,c2) + 11 D(c4,c2)
+ + 10 D(c5,c2) + 10 D(Alpha,c3) + 8 D(c1,c3) + 8 D(c2,c3) + D(c4,c3)
+ + D(c5,c3) + 12 D(Alpha,c4) + 10 D(c1,c4) + 11 D(c2,c4) + D(c3,c4)
+ + D(c5,c4) + 12 D(Alpha,c5) + 11 D(c1,c5) + 10 D(c2,c5) + D(c3,c5)
+ + D(c4,c5)
+
+Subject To
+ unSeulClientEstLivre1(Alpha): + D(Alpha,Alpha) + D(c1,Alpha)
+ + D(c2,Alpha) + D(c3,Alpha) + D(c4,Alpha) + D(c5,Alpha) = 1
+ unSeulClientEstLivre1(c1): + D(Alpha,c1) + D(c1,c1) + D(c2,c1)
+ + D(c3,c1) + D(c4,c1) + D(c5,c1) = 1
+ unSeulClientEstLivre1(c2): + D(Alpha,c2) + D(c1,c2) + D(c2,c2)
+ + D(c3,c2) + D(c4,c2) + D(c5,c2) = 1
+ unSeulClientEstLivre1(c3): + D(Alpha,c3) + D(c1,c3) + D(c2,c3)
+ + D(c3,c3) + D(c4,c3) + D(c5,c3) = 1
+ unSeulClientEstLivre1(c4): + D(Alpha,c4) + D(c1,c4) + D(c2,c4)
+ + D(c3,c4) + D(c4,c4) + D(c5,c4) = 1
+ unSeulClientEstLivre1(c5): + D(Alpha,c5) + D(c1,c5) + D(c2,c5)
+ + D(c3,c5) + D(c4,c5) + D(c5,c5) = 1
+ unSeulClientEstLivre2(Alpha): + D(Alpha,Alpha) + D(Alpha,c1)
+ + D(Alpha,c2) + D(Alpha,c3) + D(Alpha,c4) + D(Alpha,c5) = 1
+ unSeulClientEstLivre2(c1): + D(c1,Alpha) + D(c1,c1) + D(c1,c2)
+ + D(c1,c3) + D(c1,c4) + D(c1,c5) = 1
+ unSeulClientEstLivre2(c2): + D(c2,Alpha) + D(c2,c1) + D(c2,c2)
+ + D(c2,c3) + D(c2,c4) + D(c2,c5) = 1
+ unSeulClientEstLivre2(c3): + D(c3,Alpha) + D(c3,c1) + D(c3,c2)
+ + D(c3,c3) + D(c3,c4) + D(c3,c5) = 1
+ unSeulClientEstLivre2(c4): + D(c4,Alpha) + D(c4,c1) + D(c4,c2)
+ + D(c4,c3) + D(c4,c4) + D(c4,c5) = 1
+ unSeulClientEstLivre2(c5): + D(c5,Alpha) + D(c5,c1) + D(c5,c2)
+ + D(c5,c3) + D(c5,c4) + D(c5,c5) = 1
+ sourceEtDestinationDifferentes(Alpha): + D(Alpha,Alpha) = -0
+ sourceEtDestinationDifferentes(c1): + D(c1,c1) = -0
+ sourceEtDestinationDifferentes(c2): + D(c2,c2) = -0
+ sourceEtDestinationDifferentes(c3): + D(c3,c3) = -0
+ sourceEtDestinationDifferentes(c4): + D(c4,c4) = -0
+ sourceEtDestinationDifferentes(c5): + D(c5,c5) = -0
+ RetourAuMagasin(c1,c1): - 5 D(c1,c1) >= -4
+ RetourAuMagasin(c1,c2): - 5 D(c1,c2) - Directions(c1) + Directions(c2)
+ >= -4
+ RetourAuMagasin(c1,c3): - 5 D(c1,c3) - Directions(c1) + Directions(c3)
+ >= -4
+ RetourAuMagasin(c1,c4): - 5 D(c1,c4) - Directions(c1) + Directions(c4)
+ >= -4
+ RetourAuMagasin(c1,c5): - 5 D(c1,c5) - Directions(c1) + Directions(c5)
+ >= -4
+ RetourAuMagasin(c2,c1): - 5 D(c2,c1) + Directions(c1) - Directions(c2)
+ >= -4
+ RetourAuMagasin(c2,c2): - 5 D(c2,c2) >= -4
+ RetourAuMagasin(c2,c3): - 5 D(c2,c3) - Directions(c2) + Directions(c3)
+ >= -4
+ RetourAuMagasin(c2,c4): - 5 D(c2,c4) - Directions(c2) + Directions(c4)
+ >= -4
+ RetourAuMagasin(c2,c5): - 5 D(c2,c5) - Directions(c2) + Directions(c5)
+ >= -4
+ RetourAuMagasin(c3,c1): - 5 D(c3,c1) + Directions(c1) - Directions(c3)
+ >= -4
+ RetourAuMagasin(c3,c2): - 5 D(c3,c2) + Directions(c2) - Directions(c3)
+ >= -4
+ RetourAuMagasin(c3,c3): - 5 D(c3,c3) >= -4
+ RetourAuMagasin(c3,c4): - 5 D(c3,c4) - Directions(c3) + Directions(c4)
+ >= -4
+ RetourAuMagasin(c3,c5): - 5 D(c3,c5) - Directions(c3) + Directions(c5)
+ >= -4
+ RetourAuMagasin(c4,c1): - 5 D(c4,c1) + Directions(c1) - Directions(c4)
+ >= -4
+ RetourAuMagasin(c4,c2): - 5 D(c4,c2) + Directions(c2) - Directions(c4)
+ >= -4
+ RetourAuMagasin(c4,c3): - 5 D(c4,c3) + Directions(c3) - Directions(c4)
+ >= -4
+ RetourAuMagasin(c4,c4): - 5 D(c4,c4) >= -4
+ RetourAuMagasin(c4,c5): - 5 D(c4,c5) - Directions(c4) + Directions(c5)
+ >= -4
+ RetourAuMagasin(c5,c1): - 5 D(c5,c1) + Directions(c1) - Directions(c5)
+ >= -4
+ RetourAuMagasin(c5,c2): - 5 D(c5,c2) + Directions(c2) - Directions(c5)
+ >= -4
+ RetourAuMagasin(c5,c3): - 5 D(c5,c3) + Directions(c3) - Directions(c5)
+ >= -4
+ RetourAuMagasin(c5,c4): - 5 D(c5,c4) + Directions(c4) - Directions(c5)
+ >= -4
+ RetourAuMagasin(c5,c5): - 5 D(c5,c5) >= -4
+ DirectionPositive(c1): + Directions(c1) >= 1
+ DirectionPositive(c2): + Directions(c2) >= 1
+ DirectionPositive(c3): + Directions(c3) >= 1
+ DirectionPositive(c4): + Directions(c4) >= 1
+ DirectionPositive(c5): + Directions(c5) >= 1
+ DirectionInferieurNbClients(c1): + Directions(c1) <= 5
+ DirectionInferieurNbClients(c2): + Directions(c2) <= 5
+ DirectionInferieurNbClients(c3): + Directions(c3) <= 5
+ DirectionInferieurNbClients(c4): + Directions(c4) <= 5
+ DirectionInferieurNbClients(c5): + Directions(c5) <= 5
+
+Bounds
+ 0 <= D(Alpha,Alpha) <= 1
+ 0 <= D(c1,Alpha) <= 1
+ 0 <= D(c2,Alpha) <= 1
+ 0 <= D(c3,Alpha) <= 1
+ 0 <= D(c4,Alpha) <= 1
+ 0 <= D(c5,Alpha) <= 1
+ 0 <= D(Alpha,c1) <= 1
+ 0 <= D(c1,c1) <= 1
+ 0 <= D(c2,c1) <= 1
+ 0 <= D(c3,c1) <= 1
+ 0 <= D(c4,c1) <= 1
+ 0 <= D(c5,c1) <= 1
+ 0 <= D(Alpha,c2) <= 1
+ 0 <= D(c1,c2) <= 1
+ 0 <= D(c2,c2) <= 1
+ 0 <= D(c3,c2) <= 1
+ 0 <= D(c4,c2) <= 1
+ 0 <= D(c5,c2) <= 1
+ 0 <= D(Alpha,c3) <= 1
+ 0 <= D(c1,c3) <= 1
+ 0 <= D(c2,c3) <= 1
+ 0 <= D(c3,c3) <= 1
+ 0 <= D(c4,c3) <= 1
+ 0 <= D(c5,c3) <= 1
+ 0 <= D(Alpha,c4) <= 1
+ 0 <= D(c1,c4) <= 1
+ 0 <= D(c2,c4) <= 1
+ 0 <= D(c3,c4) <= 1
+ 0 <= D(c4,c4) <= 1
+ 0 <= D(c5,c4) <= 1
+ 0 <= D(Alpha,c5) <= 1
+ 0 <= D(c1,c5) <= 1
+ 0 <= D(c2,c5) <= 1
+ 0 <= D(c3,c5) <= 1
+ 0 <= D(c4,c5) <= 1
+ 0 <= D(c5,c5) <= 1
+ Directions(c1) free
+ Directions(c2) free
+ Directions(c3) free
+ Directions(c4) free
+ Directions(c5) free
+
+Generals
+ D(Alpha,Alpha)
+ D(c1,Alpha)
+ D(c2,Alpha)
+ D(c3,Alpha)
+ D(c4,Alpha)
+ D(c5,Alpha)
+ D(Alpha,c1)
+ D(c1,c1)
+ D(c2,c1)
+ D(c3,c1)
+ D(c4,c1)
+ D(c5,c1)
+ D(Alpha,c2)
+ D(c1,c2)
+ D(c2,c2)
+ D(c3,c2)
+ D(c4,c2)
+ D(c5,c2)
+ D(Alpha,c3)
+ D(c1,c3)
+ D(c2,c3)
+ D(c3,c3)
+ D(c4,c3)
+ D(c5,c3)
+ D(Alpha,c4)
+ D(c1,c4)
+ D(c2,c4)
+ D(c3,c4)
+ D(c4,c4)
+ D(c5,c4)
+ D(Alpha,c5)
+ D(c1,c5)
+ D(c2,c5)
+ D(c3,c5)
+ D(c4,c5)
+ D(c5,c5)
+ Directions(c1)
+ Directions(c2)
+ Directions(c3)
+ Directions(c4)
+ Directions(c5)
+
+End

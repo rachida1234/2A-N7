@@ -1,0 +1,83 @@
+#  GLPK model file created by SUN for RO teaching
+
+
+###############################  Model ###############################
+
+
+
+###############################  Sets  ###############################
+
+set Positions;
+set Clients;
+
+################### Variables ###################
+
+var D{c in Positions,p in Positions },binary;
+var Directions{c in Clients},integer;
+
+###################  Constants: Data to load   #########################
+
+param distances{c in Positions, p in Positions};
+param nbClients;
+################### Constraints ###################
+
+#s.t.tousLesClientsSontLivres:
+#sum{i in Positions1} sum{j in Positions} D[i,j] =  nbClients;
+
+s.t.unSeulClientEstLivre1{i in Positions}:
+sum{j in Positions} D[j,i] = 1;
+ 
+s.t.unSeulClientEstLivre2{i in Positions}:
+sum{j in Positions} D[i,j] = 1;
+ 
+s.t.sourceEtDestinationDifferentes{i in Positions}:
+ D[i,i] =  0;
+
+s.t.RetourAuMagasin{i in Clients,j in Clients}:
+Directions[j] +(nbClients-1) >= Directions[i] + nbClients*D[i,j];
+
+s.t.DirectionPositive{i in Clients}:
+Directions[i]>=1;
+
+s.t.DirectionInferieurNbClients{i in Clients}:
+Directions[i]<= nbClients;
+
+###### Objective ######
+
+minimize distance: 
+		sum{i in Positions} sum{k in Positions} distances[i,k]* D[i,k]; 
+
+
+#default data
+
+data;
+
+set Positions :=
+Alpha
+c1
+c2
+c3
+c4
+c5
+;
+set Clients:=
+c1
+c2
+c3
+c4
+c5
+;
+
+
+param nbClients:= 5;
+
+param distances : Alpha c1 c2 c3 c4 c5:=
+Alpha 0 1 1 10 12 12
+c1 1 0 1 8 10 11
+c2 1 1 0 8 11 10
+c3 10 8 8 0 1 1
+c4 12 10 11 1 0 1
+c5 12 11 10 1 1 0;
+
+
+end;

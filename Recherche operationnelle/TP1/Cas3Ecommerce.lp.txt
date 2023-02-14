@@ -1,0 +1,79 @@
+\* Problem: ModelEcommerceCas3 *\
+
+Minimize
+ Cout: + 11 Q(P1,M1,D1) + 3 Q(P1,M1,D2) + 3 Q(P1,M2,D1) + 22 Q(P1,M2,D2)
+ + 8 Q(P1,M3,D1) + 13 Q(P1,M3,D2) + 11 Q(P2,M1,D1) + 3 Q(P2,M1,D2)
+ + 4 Q(P2,M2,D1) + 23 Q(P2,M2,D2) + 7 Q(P2,M3,D1) + 12 Q(P2,M3,D2)
+ + 110 FraisExpedition(D1,M1) + 110 FraisExpedition(D2,M1)
+ + 90 FraisExpedition(D1,M2) + 90 FraisExpedition(D2,M2)
+ + 100 FraisExpedition(D1,M3) + 100 FraisExpedition(D2,M3)
+
+Subject To
+ stockdisponible(P1,M1): + Q(P1,M1,D1) + Q(P1,M1,D2) <= 2.5
+ stockdisponible(P1,M2): + Q(P1,M2,D1) + Q(P1,M2,D2) <= 1
+ stockdisponible(P1,M3): + Q(P1,M3,D1) + Q(P1,M3,D2) <= 2
+ stockdisponible(P2,M1): + Q(P2,M1,D1) + Q(P2,M1,D2) <= 1
+ stockdisponible(P2,M2): + Q(P2,M2,D1) + Q(P2,M2,D2) <= 2
+ stockdisponible(P2,M3): + Q(P2,M3,D1) + Q(P2,M3,D2) <= 1
+ QteVerifieePourUneDemande(P1,D1): - Q(P1,M1,D1) - Q(P1,M2,D1)
+ - Q(P1,M3,D1) = -2
+ QteVerifieePourUneDemande(P1,D2): - Q(P1,M1,D2) - Q(P1,M2,D2)
+ - Q(P1,M3,D2) = -1
+ QteVerifieePourUneDemande(P2,D1): - Q(P2,M1,D1) - Q(P2,M2,D1)
+ - Q(P2,M3,D1) = -0
+ QteVerifieePourUneDemande(P2,D2): - Q(P2,M1,D2) - Q(P2,M2,D2)
+ - Q(P2,M3,D2) = -3
+ MinorationFrais(M1,D1): - Q(P1,M1,D1) - Q(P2,M1,D1)
+ + FraisExpedition(D1,M1) <= -0
+ MinorationFrais(M1,D2): - Q(P1,M1,D2) - Q(P2,M1,D2)
+ + FraisExpedition(D2,M1) <= -0
+ MinorationFrais(M2,D1): - Q(P1,M2,D1) - Q(P2,M2,D1)
+ + FraisExpedition(D1,M2) <= -0
+ MinorationFrais(M2,D2): - Q(P1,M2,D2) - Q(P2,M2,D2)
+ + FraisExpedition(D2,M2) <= -0
+ MinorationFrais(M3,D1): - Q(P1,M3,D1) - Q(P2,M3,D1)
+ + FraisExpedition(D1,M3) <= -0
+ MinorationFrais(M3,D2): - Q(P1,M3,D2) - Q(P2,M3,D2)
+ + FraisExpedition(D2,M3) <= -0
+ MajorationFrais(M1,D1): + Q(P1,M1,D1) + Q(P2,M1,D1)
+ - 3.5 FraisExpedition(D1,M1) <= -0
+ MajorationFrais(M1,D2): + Q(P1,M1,D2) + Q(P2,M1,D2)
+ - 3.5 FraisExpedition(D2,M1) <= -0
+ MajorationFrais(M2,D1): + Q(P1,M2,D1) + Q(P2,M2,D1)
+ - 3 FraisExpedition(D1,M2) <= -0
+ MajorationFrais(M2,D2): + Q(P1,M2,D2) + Q(P2,M2,D2)
+ - 3 FraisExpedition(D2,M2) <= -0
+ MajorationFrais(M3,D1): + Q(P1,M3,D1) + Q(P2,M3,D1)
+ - 3 FraisExpedition(D1,M3) <= -0
+ MajorationFrais(M3,D2): + Q(P1,M3,D2) + Q(P2,M3,D2)
+ - 3 FraisExpedition(D2,M3) <= -0
+
+Bounds
+ 0 <= FraisExpedition(D1,M1) <= 1
+ 0 <= FraisExpedition(D2,M1) <= 1
+ 0 <= FraisExpedition(D1,M2) <= 1
+ 0 <= FraisExpedition(D2,M2) <= 1
+ 0 <= FraisExpedition(D1,M3) <= 1
+ 0 <= FraisExpedition(D2,M3) <= 1
+
+Generals
+ Q(P1,M1,D1)
+ Q(P1,M1,D2)
+ Q(P1,M2,D1)
+ Q(P1,M2,D2)
+ Q(P1,M3,D1)
+ Q(P1,M3,D2)
+ Q(P2,M1,D1)
+ Q(P2,M1,D2)
+ Q(P2,M2,D1)
+ Q(P2,M2,D2)
+ Q(P2,M3,D1)
+ Q(P2,M3,D2)
+ FraisExpedition(D1,M1)
+ FraisExpedition(D2,M1)
+ FraisExpedition(D1,M2)
+ FraisExpedition(D2,M2)
+ FraisExpedition(D1,M3)
+ FraisExpedition(D2,M3)
+
+End

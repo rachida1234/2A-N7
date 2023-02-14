@@ -1,0 +1,44 @@
+Problem:    
+Rows:       4
+Columns:    4
+Non-zeros:  8
+Status:     OPTIMAL
+Objective:  Cout = 74 (MINimum)
+
+   No.   Row name   St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 TacheassocieeUnePersonne(c1)
+                    NS             1             1             =            34 
+     2 TacheassocieeUnePersonne(c2)
+                    NS             1             1             =            50 
+     3 PersonneRealiseuneTache(p1)
+                    NS             1             1             =           -10 
+     4 PersonneRealiseuneTache(p2)
+                    B              1             1             = 
+
+   No. Column name  St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 x(p1,c1)     NL             0             0                           6 
+     2 x(p2,c1)     B              1             0               
+     3 x(p1,c2)     B              1             0               
+     4 x(p2,c2)     B              0             0               
+
+Karush-Kuhn-Tucker optimality conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.DE: max.abs.err = 0.00e+00 on column 0
+        max.rel.err = 0.00e+00 on column 0
+        High quality
+
+KKT.DB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

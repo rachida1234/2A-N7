@@ -1,0 +1,178 @@
+Problem:    ModelEcommerceCas4
+Rows:       54
+Columns:    41 (41 integer, 36 binary)
+Non-zeros:  183
+Status:     INTEGER OPTIMAL
+Objective:  distance = 22 (MINimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 unSeulClientEstLivre1[Alpha]
+                                   1             1             = 
+     2 unSeulClientEstLivre1[c1]
+                                   1             1             = 
+     3 unSeulClientEstLivre1[c2]
+                                   1             1             = 
+     4 unSeulClientEstLivre1[c3]
+                                   1             1             = 
+     5 unSeulClientEstLivre1[c4]
+                                   1             1             = 
+     6 unSeulClientEstLivre1[c5]
+                                   1             1             = 
+     7 unSeulClientEstLivre2[Alpha]
+                                   1             1             = 
+     8 unSeulClientEstLivre2[c1]
+                                   1             1             = 
+     9 unSeulClientEstLivre2[c2]
+                                   1             1             = 
+    10 unSeulClientEstLivre2[c3]
+                                   1             1             = 
+    11 unSeulClientEstLivre2[c4]
+                                   1             1             = 
+    12 unSeulClientEstLivre2[c5]
+                                   1             1             = 
+    13 sourceEtDestinationDifferentes[Alpha]
+                                   0            -0             = 
+    14 sourceEtDestinationDifferentes[c1]
+                                   0            -0             = 
+    15 sourceEtDestinationDifferentes[c2]
+                                   0            -0             = 
+    16 sourceEtDestinationDifferentes[c3]
+                                   0            -0             = 
+    17 sourceEtDestinationDifferentes[c4]
+                                   0            -0             = 
+    18 sourceEtDestinationDifferentes[c5]
+                                   0            -0             = 
+    19 RetourAuMagasin[c1,c1]
+                                   0            -4               
+    20 RetourAuMagasin[c1,c2]
+                                  -4            -4               
+    21 RetourAuMagasin[c1,c3]
+                                  -1            -4               
+    22 RetourAuMagasin[c1,c4]
+                                  -2            -4               
+    23 RetourAuMagasin[c1,c5]
+                                  -3            -4               
+    24 RetourAuMagasin[c2,c1]
+                                   4            -4               
+    25 RetourAuMagasin[c2,c2]
+                                   0            -4               
+    26 RetourAuMagasin[c2,c3]
+                                   3            -4               
+    27 RetourAuMagasin[c2,c4]
+                                   2            -4               
+    28 RetourAuMagasin[c2,c5]
+                                  -4            -4               
+    29 RetourAuMagasin[c3,c1]
+                                  -4            -4               
+    30 RetourAuMagasin[c3,c2]
+                                  -3            -4               
+    31 RetourAuMagasin[c3,c3]
+                                   0            -4               
+    32 RetourAuMagasin[c3,c4]
+                                  -1            -4               
+    33 RetourAuMagasin[c3,c5]
+                                  -2            -4               
+    34 RetourAuMagasin[c4,c1]
+                                   2            -4               
+    35 RetourAuMagasin[c4,c2]
+                                  -2            -4               
+    36 RetourAuMagasin[c4,c3]
+                                  -4            -4               
+    37 RetourAuMagasin[c4,c4]
+                                   0            -4               
+    38 RetourAuMagasin[c4,c5]
+                                  -1            -4               
+    39 RetourAuMagasin[c5,c1]
+                                   3            -4               
+    40 RetourAuMagasin[c5,c2]
+                                  -1            -4               
+    41 RetourAuMagasin[c5,c3]
+                                   2            -4               
+    42 RetourAuMagasin[c5,c4]
+                                  -4            -4               
+    43 RetourAuMagasin[c5,c5]
+                                   0            -4               
+    44 DirectionPositive[c1]
+                                   5             1               
+    45 DirectionPositive[c2]
+                                   1             1               
+    46 DirectionPositive[c3]
+                                   4             1               
+    47 DirectionPositive[c4]
+                                   3             1               
+    48 DirectionPositive[c5]
+                                   2             1               
+    49 DirectionInferieurNbClients[c1]
+                                   5                           5 
+    50 DirectionInferieurNbClients[c2]
+                                   1                           5 
+    51 DirectionInferieurNbClients[c3]
+                                   4                           5 
+    52 DirectionInferieurNbClients[c4]
+                                   3                           5 
+    53 DirectionInferieurNbClients[c5]
+                                   2                           5 
+    54 distance                   22                             
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 D[Alpha,Alpha]
+                    *              0             0             1 
+     2 D[c1,Alpha]  *              1             0             1 
+     3 D[c2,Alpha]  *              0             0             1 
+     4 D[c3,Alpha]  *              0             0             1 
+     5 D[c4,Alpha]  *              0             0             1 
+     6 D[c5,Alpha]  *              0             0             1 
+     7 D[Alpha,c1]  *              0             0             1 
+     8 D[c1,c1]     *              0             0             1 
+     9 D[c2,c1]     *              0             0             1 
+    10 D[c3,c1]     *              1             0             1 
+    11 D[c4,c1]     *              0             0             1 
+    12 D[c5,c1]     *              0             0             1 
+    13 D[Alpha,c2]  *              1             0             1 
+    14 D[c1,c2]     *              0             0             1 
+    15 D[c2,c2]     *              0             0             1 
+    16 D[c3,c2]     *              0             0             1 
+    17 D[c4,c2]     *              0             0             1 
+    18 D[c5,c2]     *              0             0             1 
+    19 D[Alpha,c3]  *              0             0             1 
+    20 D[c1,c3]     *              0             0             1 
+    21 D[c2,c3]     *              0             0             1 
+    22 D[c3,c3]     *              0             0             1 
+    23 D[c4,c3]     *              1             0             1 
+    24 D[c5,c3]     *              0             0             1 
+    25 D[Alpha,c4]  *              0             0             1 
+    26 D[c1,c4]     *              0             0             1 
+    27 D[c2,c4]     *              0             0             1 
+    28 D[c3,c4]     *              0             0             1 
+    29 D[c4,c4]     *              0             0             1 
+    30 D[c5,c4]     *              1             0             1 
+    31 D[Alpha,c5]  *              0             0             1 
+    32 D[c1,c5]     *              0             0             1 
+    33 D[c2,c5]     *              1             0             1 
+    34 D[c3,c5]     *              0             0             1 
+    35 D[c4,c5]     *              0             0             1 
+    36 D[c5,c5]     *              0             0             1 
+    37 Directions[c1]
+                    *              5                             
+    38 Directions[c2]
+                    *              1                             
+    39 Directions[c3]
+                    *              4                             
+    40 Directions[c4]
+                    *              3                             
+    41 Directions[c5]
+                    *              2                             
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

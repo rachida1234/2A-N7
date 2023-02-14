@@ -1,0 +1,20 @@
+\* Problem: ModelEcommerceCas1 *\
+
+Minimize
+ Cout: + Q(F1,M1,D1) + Q(F1,M1,D2) + 2 Q(F1,M2,D1) + 2 Q(F1,M2,D2)
+ + 3 Q(F1,M3,D1) + 3 Q(F1,M3,D2) + Q(F2,M1,D1) + Q(F2,M1,D2)
+ + 3 Q(F2,M2,D1) + 3 Q(F2,M2,D2) + 2 Q(F2,M3,D1) + 2 Q(F2,M3,D2)
+
+Subject To
+ stockdisponible(F1,M1): + Q(F1,M1,D1) + Q(F1,M1,D2) <= 2.5
+ stockdisponible(F1,M2): + Q(F1,M2,D1) + Q(F1,M2,D2) <= 1
+ stockdisponible(F1,M3): + Q(F1,M3,D1) + Q(F1,M3,D2) <= 2
+ stockdisponible(F2,M1): + Q(F2,M1,D1) + Q(F2,M1,D2) <= 1
+ stockdisponible(F2,M2): + Q(F2,M2,D1) + Q(F2,M2,D2) <= 2
+ stockdisponible(F2,M3): + Q(F2,M3,D1) + Q(F2,M3,D2) <= 1
+ QuantiteVerifiee(F1): - Q(F1,M1,D1) - Q(F1,M1,D2) - Q(F1,M2,D1)
+ - Q(F1,M2,D2) - Q(F1,M3,D1) - Q(F1,M3,D2) = -3
+ QuantiteVerifiee(F2): - Q(F2,M1,D1) - Q(F2,M1,D2) - Q(F2,M2,D1)
+ - Q(F2,M2,D2) - Q(F2,M3,D1) - Q(F2,M3,D2) = -3
+
+End

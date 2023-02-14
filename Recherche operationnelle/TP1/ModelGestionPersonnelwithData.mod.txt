@@ -1,0 +1,56 @@
+#  GLPK model file created by SUN for RO teaching
+
+
+###############################  Model ###############################
+
+
+
+###############################  Sets  ###############################
+
+set Personnel;
+set Competences;
+
+################### Variables ###################
+
+var x{i in Personnel,j in Competences}, >=0; 
+# or binary ?; 
+
+###################  Constants: Data to load   #########################
+
+param c{i in Personnel, j in Competences};
+
+################### Constraints ###################
+
+s.t.TacheassocieeUnePersonne{j in Competences}:
+sum{i in Personnel} x[i,j] =1;
+
+s.t.PersonneRealiseuneTache{i in Personnel}:
+sum{j in Competences} x[i,j]=1;
+  
+
+
+###### Objective ######
+
+minimize Cout: 
+		sum{i in Personnel,j in Competences} c[i,j]* x[i,j]; 
+
+
+#default data
+
+data;
+
+set Personnel :=
+p1
+p2;
+
+set Competences:=
+c1
+c2;
+
+param c : c1 c2:=
+p1 30 40
+p2 34 50;
+
+
+
+end;

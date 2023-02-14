@@ -1,0 +1,80 @@
+Problem:    
+Rows:       22
+Columns:    12 (12 integer, 0 binary)
+Non-zeros:  36
+Status:     INTEGER OPTIMAL
+Objective:  Cout = 10 (MINimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 stockdisponiblePouruneDemande(P1,M1,D1)
+                                   1                         2.5 
+     2 stockdisponiblePouruneDemande(P1,M1,D2)
+                                   1                         2.5 
+     3 stockdisponiblePouruneDemande(P1,M2,D1)
+                                   1                           1 
+     4 stockdisponiblePouruneDemande(P1,M2,D2)
+                                   0                           1 
+     5 stockdisponiblePouruneDemande(P1,M3,D1)
+                                   0                           2 
+     6 stockdisponiblePouruneDemande(P1,M3,D2)
+                                   0                           2 
+     7 stockdisponiblePouruneDemande(P2,M1,D1)
+                                   0                           1 
+     8 stockdisponiblePouruneDemande(P2,M1,D2)
+                                   1                           1 
+     9 stockdisponiblePouruneDemande(P2,M2,D1)
+                                   0                           2 
+    10 stockdisponiblePouruneDemande(P2,M2,D2)
+                                   1                           2 
+    11 stockdisponiblePouruneDemande(P2,M3,D1)
+                                   0                           1 
+    12 stockdisponiblePouruneDemande(P2,M3,D2)
+                                   1                           1 
+    13 QteVerifieePourUneDemande(P1,D1)
+                                  -2            -2             = 
+    14 QteVerifieePourUneDemande(P1,D2)
+                                  -1            -1             = 
+    15 QteVerifieePourUneDemande(P2,D1)
+                                   0            -0             = 
+    16 QteVerifieePourUneDemande(P2,D2)
+                                  -3            -3             = 
+    17 stockdisponiblePourToutesLesDemande(P1,M1)
+                                   2                         2.5 
+    18 stockdisponiblePourToutesLesDemande(P1,M2)
+                                   1                           1 
+    19 stockdisponiblePourToutesLesDemande(P1,M3)
+                                   0                           2 
+    20 stockdisponiblePourToutesLesDemande(P2,M1)
+                                   1                           1 
+    21 stockdisponiblePourToutesLesDemande(P2,M2)
+                                   1                           2 
+    22 stockdisponiblePourToutesLesDemande(P2,M3)
+                                   1                           1 
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 Q(P1,M1,D1)  *              1             0               
+     2 Q(P1,M1,D2)  *              1             0               
+     3 Q(P1,M2,D1)  *              1             0               
+     4 Q(P1,M2,D2)  *              0             0               
+     5 Q(P1,M3,D1)  *              0             0               
+     6 Q(P1,M3,D2)  *              0             0               
+     7 Q(P2,M1,D1)  *              0             0               
+     8 Q(P2,M1,D2)  *              1             0               
+     9 Q(P2,M2,D1)  *              0             0               
+    10 Q(P2,M2,D2)  *              1             0               
+    11 Q(P2,M3,D1)  *              0             0               
+    12 Q(P2,M3,D2)  *              1             0               
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

@@ -1,0 +1,12 @@
+\* Problem: ModelGestionPersonnel *\
+
+Minimize
+ Cout: + 30 x(p1,c1) + 34 x(p2,c1) + 40 x(p1,c2) + 50 x(p2,c2)
+
+Subject To
+ TacheassocieeUnePersonne(c1): + x(p1,c1) + x(p2,c1) = 1
+ TacheassocieeUnePersonne(c2): + x(p1,c2) + x(p2,c2) = 1
+ PersonneRealiseuneTache(p1): + x(p1,c1) + x(p1,c2) = 1
+ PersonneRealiseuneTache(p2): + x(p2,c1) + x(p2,c2) = 1
+
+End

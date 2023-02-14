@@ -1,0 +1,15 @@
+\* Problem: ModelAssemblagePLNE *\
+
+Maximize
+ BeneficeTotal: + 90000 v(S) + 100000 v(L)
+
+Subject To
+ RespectHeureDeTravail: + 5 v(S) + 6 v(L) <= 60
+ RespectSurface: + 2000 v(S) + 1000 v(L) <= 15000
+ RespectDemandeL: + v(L) <= 8
+
+Generals
+ v(S)
+ v(L)
+
+End

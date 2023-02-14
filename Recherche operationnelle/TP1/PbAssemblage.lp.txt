@@ -1,0 +1,15 @@
+\* Problem: ModelAssemblage *\
+
+Maximize
+ BeneficeTotal: + 9000 v(S) + 10000 v(L)
+
+Subject To
+ RespectHeureDeTravail: + 0.05 v(S) + 0.06 v(L) <= 60
+ RespectSurface: + 20 v(S) + 10 v(L) <= 15000
+ RespectDemandeL: + v(L) <= 800
+
+Generals
+ v(S)
+ v(L)
+
+End

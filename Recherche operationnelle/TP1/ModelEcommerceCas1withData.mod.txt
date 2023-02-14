@@ -1,0 +1,75 @@
+#  GLPK model file created by SUN for RO teaching
+
+
+###############################  Model ###############################
+
+
+
+###############################  Sets  ###############################
+
+set Magasins;
+set Fluides;
+set Demandes;
+
+
+################### Variables ###################
+
+var Q{i in Fluides,j in Magasins,k in Demandes}, >=0; 
+# or binary ?; 
+
+###################  Constants: Data to load   #########################
+
+param cout{i in Magasins, j in Fluides};
+param stock{i in Magasins, j in Fluides};
+param SDemandes{i in Demandes, j in Fluides};
+
+################### Constraints ###################
+
+s.t.stockdisponible{j in Fluides, k in Magasins}:
+  sum{i in Demandes} Q[j,k,i] <= stock[k,j];
+
+s.t.QuantiteVerifiee{j in Fluides}:
+ sum{i in Demandes} SDemandes[i,j] == sum{k in Magasins,i in Demandes} Q[j,k,i];
+
+
+###### Objective ######
+
+minimize Cout: 
+	sum{i in Fluides, j in Magasins,k in Demandes}Q[i,j,k]*cout[j,i]; 
+
+
+#default data
+
+data;
+
+set Magasins :=
+M1
+M2
+M3;
+
+set Fluides:=
+F1
+F2;
+
+set Demandes :=
+D1
+D2;
+
+param SDemandes:F1 F2:=
+D1  2 0
+D2  1 3;
+
+param cout: F1 F2 :=
+M1  1  1
+M2  2  3
+M3  3  2;
+
+
+param stock: F1 F2 :=
+M1 2.5 1
+M2 1 2
+M3 2 1 ;
+
+
+
+end;

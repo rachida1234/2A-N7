@@ -1,0 +1,74 @@
+#  GLPK model file created by SUN for RO teaching
+
+
+###############################  Model ###############################
+
+
+
+###############################  Sets  ###############################
+
+set Cars;
+
+
+################### Variables ###################
+
+var v{i in Cars},integer >=0; 
+# or binary ?; 
+
+###################  Constants: Data to load   #########################
+
+param benefparVoiture{i in Cars}; 
+
+param Surface{i in Cars}; 
+
+param Heure{i in Cars};
+param Q{i in Cars};
+
+################### Constraints ###################
+
+
+s.t. RespectHeureDeTravail:
+  sum{i in Cars} Heure[i] * v[i] <= 60;
+  
+s.t. RespectSurface:
+  sum{i in Cars} Surface[i] * v[i] <= 15000;
+  
+s.t. RespectDemandeL:
+     sum{i in Cars} v[i]*Q[i] <= 800;    
+
+
+###### Objective ######
+
+maximize BeneficeTotal: 
+		sum{i in Cars} v[i]* benefparVoiture[i]; 
+
+#end;
+
+
+#default data
+
+data;
+
+set Cars := 
+S
+L;
+
+
+
+param Heure :=
+S 0.05
+L 0.06;
+
+param Surface :=
+S 20
+L 10;
+
+param Q :=
+S 0
+L 1;
+
+param benefparVoiture :=
+S 9000
+L 10000;
+
+end;
